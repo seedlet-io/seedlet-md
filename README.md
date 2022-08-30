@@ -6,8 +6,6 @@ A collection of resources (typeface, specification, etc.) for Seedlet.md Markdow
 
 The following README sections specify and implement tasks made available as CLI commands (using [`mask`][1]). The commands may be executed as `dev <task>` (e.g., `dev setup`). Tip: try `dev --help`.
 
----
-
 ## setup
 
 > Initializes/updates the project (e.g, installs dependencies).
