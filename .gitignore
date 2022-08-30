@@ -1,0 +1,15 @@
+._*
+
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+.idea
+.vim
+
+*.iml
+*.un~
+
+Brewfile.lock.json
+
+/tmp
