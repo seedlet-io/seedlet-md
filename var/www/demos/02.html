@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seedlet.md Typeface Demo 01</title>
+  <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../lib/demo.css">
+  <link rel="stylesheet" href="./02.css">
+</head>
+
+<body>
+  <article class="demo 02">
+    <header>
+      <h1>Seedlet.md Demo 02 (Quill)</h1>
+    </header>
+
+    <p>Notes</p>
+
+    <ul>
+      <li>This demo targets the <a href="https://quilljs.com/">Quill editor</a>.</li>
+      <li>Doesn't work at the moment if the start of the selection to be bolded is at "index = 0" (the start of the editor). Try selecting "hello" below and then clicking "bold". (Safari, at least)</li>
+    </ul>
+
+    <div id="toolbar">
+      <!-- <button class="ql-bold">Bold</button> -->
+      <!-- using 'md-bold' instead of 'ql-bold' to reimplement with Seedlet.md typeface -->
+      <button id="md-bold">Bold</button>
+    </div>
+
+    <div id="editor">
+      <p>Well hello there!</p>
+    </div>
+  </article>
+
+  <script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
+
+  <script>
+    var editor = new Quill('#editor', {
+      modules: { toolbar: '#toolbar' },
+      theme: 'snow',
+    });
+
+    var btn_bold = document.getElementById("md-bold");
+
+    // on click of "bold", wrap the selected text: "**<text>**".
+    btn_bold.onclick = function () {
+      var range = editor.getSelection();
+
+      if (range) {
+        if (range.length == 0) {
+          console.log('User cursor is at index', range.index);
+        } else {
+          var text = editor.getText(range.index, range.length);
+          text = ["**", text, "**"].join("");
+
+          editor.deleteText(range.index, range.length);
+          editor.insertText(range.index, text);
+          editor.setSelection(4 + range.index + range.length);
+        }
+      } else {
+        console.info("cursor is not in editor");
+      }
+    }
+  </script>
+</body>
+
+</html>
