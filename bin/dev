@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+source ${PROJECT}/lib/support.sh
+
+main() {
+  _mask_ "${@:1}"
+}
+
+_mask_() {
+  mask --maskfile ${PROJECT}/README.md "${@:1}"
+}
+
+main "$@"

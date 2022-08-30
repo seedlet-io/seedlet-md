@@ -1,0 +1,16 @@
+article.demo textarea {
+  font-family: 'Seedlet.md';
+  font-size: 18px;
+  width: 726px;
+  height: 360px;
+  margin: 0;
+  padding: 10px 36px;
+  overflow: visible;
+  border: 1px dotted gray;
+  outline: none;
+}
+
+
+article.demo textarea.ss01 {
+  font-feature-settings: 'ss01';
+}

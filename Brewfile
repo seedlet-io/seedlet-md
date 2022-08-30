@@ -2,3 +2,5 @@
 
 brew "coreutils"
 brew "direnv"
+brew "mask"
+brew "serve"

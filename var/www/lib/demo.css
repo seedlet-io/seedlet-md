@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Seedlet.md";
+  src: url("../lib/Seedlet.md-Regular.woff2") format("woff2");
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+article {
+  margin: 20px auto;
+  width: 800px;
+  overflow: visible;
+}
+
+article h1 {
+  text-align: center;
+}
